@@ -1,0 +1,117 @@
+.grid {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    border: solid black;
+}
+  
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.pac-dot {
+    background-color: #fdd000;
+    border: 5px solid white;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-color: #587558;
+}
+
+.power-pellet {
+    background-color: #fdd000;
+    border-radius: 10px;
+}
+
+.pac-man {
+    position: relative;
+    border: 0;
+    background: transparent;
+    z-index: 3;
+}
+
+.pac-man::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: white url("assets/naiwa.webp") no-repeat -70px -4px / 157px 88px;
+    box-shadow: 0 1px 3px rgba(35, 24, 21, 0.35);
+    pointer-events: none;
+}
+
+.ghost {
+    position: relative;
+    border: 0;
+    background: transparent;
+    z-index: 2;
+}
+
+.ghost::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: white url("assets/doubao.png") no-repeat 50% 38% / 135%;
+    box-shadow: 0 1px 3px rgba(35, 24, 21, 0.35);
+    pointer-events: none;
+}
+
+.ghost.scared-ghost {
+    opacity: 0.55;
+}
+
+.campus-label {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 4px 7px;
+    border: 1px solid rgba(18, 59, 36, 0.2);
+    border-radius: 8px;
+    background: rgba(250, 255, 250, 0.96);
+    color: #16452a;
+    box-shadow: 0 2px 5px rgba(8, 45, 24, 0.16);
+    font: 600 12px/1.4 "Microsoft YaHei", sans-serif;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.campus-fountain {
+    position: absolute;
+    left: 270px;
+    top: 230px;
+    width: 52px;
+    height: 52px;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    border: 4px solid white;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #f3ffff 0 8%, #47d6e0 9% 24%, #a5f3f0 25% 30%, #239aa9 31% 56%, #8be5e4 57% 63%, #277b8c 64%);
+    box-shadow: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 3px;
+    color: white;
+    text-shadow: 0 1px 2px #164552;
+    font: 600 10px/1.2 "Microsoft YaHei", sans-serif;
+    pointer-events: none;
+}
+
+.wall.fountain-base {
+    background-color: white;
+}
